@@ -14,7 +14,16 @@ class CreateDmrisTable extends Migration
     public function up()
     {
         Schema::create('dmris', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('title');
+            $table->string('subtitle')->nullable();
+            $table->date('data')->nullable();
+            $table->text('description')->nullable();
+            $table->text('observacao')->nullable();
+            $table->string('video')->nullable();
+            $table->string('image_01')->nullable();
+            $table->string('image_02')->nullable();
+            $table->string('image_03')->nullable();
             $table->timestamps();
         });
     }

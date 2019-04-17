@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRetinografiasTable extends Migration
+class CreateBannersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,11 @@ class CreateRetinografiasTable extends Migration
      */
     public function up()
     {
-        Schema::create('retinografias', function (Blueprint $table) {
+        Schema::create('banners', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('subtitle')->nullable();
-            $table->date('data')->nullable();
-            $table->text('description')->nullable();
-            $table->text('observacao')->nullable();
-            $table->string('video')->nullable();
             $table->string('image_01')->nullable();
-            $table->string('image_02')->nullable();
-            $table->string('image_03')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +29,6 @@ class CreateRetinografiasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retinografias');
+        Schema::dropIfExists('banners');
     }
 }
