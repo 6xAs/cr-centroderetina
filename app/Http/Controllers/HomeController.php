@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CR\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $date = date('Y');
+        return view('home', compact('date'));
     }
 }

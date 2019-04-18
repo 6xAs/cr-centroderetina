@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CR\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\UploadedFile;
-use App\Notice;
+use CR\Notice;
 use DB;
 use File;
 use Illuminate\Database\Eloquent\Model;

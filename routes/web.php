@@ -166,6 +166,31 @@ Route::get('/simple-table', function () {
 Route::get('/datatable', function () {
     return view('template-admin.datatable');
 });
+
+// Pages Panel
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// ROUTE PANEL ADM - HOME
+Route::get('/home-panel', 'HomeController@index')->name('home');
+
+// ##################  ROUTES OF BANNER ################
+Route::get('/page-inserir-banner', 'BannerController@index')->name('page-inserir-banner');
+Route::get('/page-listar-banner', 'BannerController@listarBanner')->name('page-listar-banner');
+Route::post('/input-banner', 'BannerController@insert');
+Route::resource('/editbanner', 'BannerController');
+Route::resource('/banner', 'BannerController');
+Route::resource('/deletarbanner', 'BannerController');
+
+// ##################  ROUTES OF BANNER ################
+Route::get('/page-inserir-angio', 'AngioController@index')->name('page-inserir-angio');
+Route::get('/page-listar-angio', 'AngioController@listarTransparency')->name('page-listar-angio');
+Route::post('/input-angio', 'AngioController@insert');
+Route::resource('/editangio', 'AngioController');
+Route::resource('/angio', 'AngioController');
+Route::resource('/deletarangio', 'AngioController');
+Route::get('showangio/{id}/show', function ($id) {
+    $date = date('Y');
+    $angio = \CR\Angiografia::find($id);
+    return view('pages-panel.showangio', compact('angiografia', 'date'));
+})->name('show');

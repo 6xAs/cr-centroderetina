@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@include('template-admin.head')
+
+@include('template-admin.top')
+
+@include('template-admin.menu-vertical')
+
+@include('template-admin.dashboard')
 
 @section('content')
 <div class="container">
@@ -21,3 +27,10 @@
     </div>
 </div>
 @endsection
+
+
+@include('template-admin.footer')
+
+@include('template-admin.control-sidebar')
+
+@include('template-admin.scripts-js')
