@@ -20,6 +20,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//fonts-->
 <!-- js -->
 <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+<!-- CK EDITOR -->
+<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>

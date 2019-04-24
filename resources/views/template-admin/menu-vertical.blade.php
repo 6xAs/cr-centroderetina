@@ -45,8 +45,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href=""><i class="fa fa-circle-o"></i> Inserir</a></li>
-          <li><a href=""><i class="fa fa-circle-o"></i> Detalhes</a></li>
+          <li><a href="/page-inserir-angio"><i class="fa fa-circle-o"></i> Inserir</a></li>
+          <li><a href="/page-listar-angio"><i class="fa fa-circle-o"></i> Detalhes</a></li>
         </ul>
       </li>
       <li class="treeview">

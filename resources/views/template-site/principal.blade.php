@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html>
 		<!-- Head -->
-		@include('templateSite.head')
+		@include('template-site.head')
 		<!-- /Fim Head -->
 <body>
 	<!-- header -->
 		  <!-- Inicio Topo -->
-			@include('templateSite.topo')
+			@include('template-site.topo')
 		  <!-- /Fim Topo do Site -->
 
 		  <!-- Inicio Menu -->
-				@include('templateSite.menu')
+				@include('template-site.menu')
 
 		  <!-- /Fim Menu -->
 
@@ -19,7 +19,7 @@
     @yield('content')
 
 		<!-- footer -->
-			@include('templateSite.footer')
+			@include('template-site.footer')
 		<!-- //footer -->
 
 		<!-- Script Footer -->

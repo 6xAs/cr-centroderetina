@@ -21,7 +21,7 @@ function mostraUm(input) {
                  $('#mostraU')
                      .attr('src', e.target.result)
                      .width(550)
-                     .height(330);
+                     .height(525);
              };
 
              reader.readAsDataURL(input.files[0]);
@@ -36,7 +36,7 @@ function mostraDois(input) {
                  $('#mostraD')
                      .attr('src', e.target.result)
                      .width(550)
-                     .height(330);
+                     .height(525);
              };
 
              reader.readAsDataURL(input.files[0]);
@@ -51,7 +51,7 @@ function mostraTres(input) {
                  $('#imageTres')
                      .attr('src', e.target.result)
                      .width(550)
-                     .height(330);
+                     .height(525);
              };
 
              reader.readAsDataURL(input.files[0]);
@@ -66,7 +66,7 @@ function mostraQuat(input) {
                  $('#imageQuatro')
                      .attr('src', e.target.result)
                      .width(550)
-                     .height(300);
+                     .height(525);
              };
 
              reader.readAsDataURL(input.files[0]);

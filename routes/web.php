@@ -14,126 +14,131 @@
 ########## PÁGINAS DO WEB SITE ###########
 // Raiz do Web Site
 Route::get('/', function () {
+    
+    $banner = \CR\Banner::All();
     //$notice = \App\Notice::orderBy('id','created_at', 'desc')->paginate(3);
-    return view('template-site.index');
+    return view('template-site.index', compact('banner'));
 });
 
 // Pag-Quem Somos
 Route::get('/Quemsomos', function () {
-    return view('htmlSite.Quemsomos');
+    return view('pages-site.Quemsomos');
 });
 #
 // Pag-RafaelCardoso
 Route::get('/Dr.RafaelCardoso', function () {
-    return view('htmlSite.drRafael');
+    return view('pages-site.drRafael');
 });
 #
 // Pag-Equipe
 Route::get('/Equipe', function () {
-    return view('htmlSite.equipe');
+    return view('pages-site.equipe');
 });
 #
 // Pag-Estrutura
 Route::get('/Estrutura', function () {
-    return view('htmlSite.estrutura');
+    return view('pages-site.estrutura');
 });
 
 ############# EXAMES ##############
 // Pag-Angiografia-Digital
 Route::get('/Angiografia-Digital', function () {
-    return view('htmlSite.angiografia-digital');
+
+    $date = date('Y');
+    $angiografia = \CR\Angiografia::All();
+    return view('pages-site.angiografia-digital', compact('date', 'angiografia'));
 });
 
 // Pag-Retinografia
 Route::get('/Retinografia', function () {
-    return view('htmlSite.Retinografia');
+    return view('pages-site.Retinografia');
 });
 
 // Pag-Oct
 Route::get('/Oct', function () {
-    return view('htmlSite.Oct');
+    return view('pages-site.Oct');
 });
 
 // Pag-USG
 Route::get('/Usg', function () {
-    return view('htmlSite.Usg');
+    return view('pages-site.Usg');
 });
 
 // Pag-Mapeamento-Retina
 Route::get('/Mapeamento-Retina', function () {
-    return view('htmlSite.Mapeamento-Retina');
+    return view('pages-site.Mapeamento-Retina');
 });
 
 ############# CIRURGIAS ##############
 // Pag-Retinopexia
 Route::get('/Retinopexia ', function () {
-    return view('htmlSite.Retinopexia ');
+    return view('pages-site.Retinopexia ');
 });
 
 // Pag-Laserterapia
 Route::get('/Laserterapia ', function () {
-    return view('htmlSite.Laserterapia ');
+    return view('pages-site.Laserterapia ');
 });
 
 // Pag-Laserterapia
 Route::get('/yag-laser ', function () {
-    return view('htmlSite.yag-laser ');
+    return view('pages-site.yag-laser ');
 });
 
 // Pag-Injecao-Intravitrea
 Route::get('/Injecao-Intravitrea ', function () {
-    return view('htmlSite.Injecao-Intravitrea ');
+    return view('pages-site.Injecao-Intravitrea ');
 });
 
 // Pag-Vitrectomia
 Route::get('/Vitrectomia', function () {
-    return view('htmlSite.Vitrectomia');
+    return view('pages-site.Vitrectomia');
 });
 
 ################ PRINCIPAIS DOENÇAS ########
 // Pag-Deslocamento-Retina
 Route::get('/Deslocamento-Retina', function () {
-    return view('htmlSite.Deslocamento-Retina');
+    return view('pages-site.Deslocamento-Retina');
 });
 
 // Pag-Dmri
 Route::get('/Dmri', function () {
-    return view('htmlSite.Dmri');
+    return view('pages-site.Dmri');
 });
 
 // Pag-Oclusoes-Vasculares-Retina
 Route::get('/Buraco-Macular', function () {
-    return view('htmlSite.Buraco-Macular');
+    return view('pages-site.Buraco-Macular');
 });
 
 // Pag-Membrana-Epirretiana
 Route::get('/Membrana-Epirretiana', function () {
-    return view('htmlSite.Membrana-Epirretiana');
+    return view('pages-site.Membrana-Epirretiana');
 });
 
 // Pag-Retinopatia-Diabetica
 Route::get('/Retinopatia-Diabetica', function () {
-    return view('htmlSite.Retinopatia-Diabetica');
+    return view('pages-site.Retinopatia-Diabetica');
 });
 
 // Pag-Retinopatia-Prematuridade
 Route::get('/Retinopatia-da-Prematuridade', function () {
-    return view('htmlSite.Retinopatia-Prematuridade');
+    return view('pages-site.Retinopatia-Prematuridade');
 });
 
 // Pag-Retinopatia-Prematuridade
 Route::get('/Uvites-Toxoplasmose', function () {
-    return view('htmlSite.Uvites-Toxoplasmose');
+    return view('pages-site.Uvites-Toxoplasmose');
 });
 
 // Pag-a
 Route::get('/Oclusoes-Vasculares-Retina', function () {
-    return view('htmlSite.Oclusoes-Vasculares-Retina');
+    return view('pages-site.Oclusoes-Vasculares-Retina');
 });
 
 // Pag-a
 Route::get('/Coriorretinopatia', function () {
-    return view('htmlSite.Coriorretinopatia');
+    return view('pages-site.Coriorretinopatia');
 });
 
 
@@ -143,7 +148,7 @@ Route::get('/Coriorretinopatia', function () {
 ################ PAGINA CONTATO ########
 // Pag-Contato
 Route::get('/Contato', function () {
-    return view('htmlSite.Contato');
+    return view('pages-site.Contato');
 });
 
 // contato - Email
@@ -184,13 +189,8 @@ Route::resource('/deletarbanner', 'BannerController');
 
 // ##################  ROUTES OF BANNER ################
 Route::get('/page-inserir-angio', 'AngioController@index')->name('page-inserir-angio');
-Route::get('/page-listar-angio', 'AngioController@listarTransparency')->name('page-listar-angio');
+Route::get('/page-listar-angio', 'AngioController@listarAngio')->name('page-listar-angio');
 Route::post('/input-angio', 'AngioController@insert');
 Route::resource('/editangio', 'AngioController');
 Route::resource('/angio', 'AngioController');
 Route::resource('/deletarangio', 'AngioController');
-Route::get('showangio/{id}/show', function ($id) {
-    $date = date('Y');
-    $angio = \CR\Angiografia::find($id);
-    return view('pages-panel.showangio', compact('angiografia', 'date'));
-})->name('show');

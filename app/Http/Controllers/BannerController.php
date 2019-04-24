@@ -45,7 +45,7 @@ class BannerController extends Controller
 
       $title                           = $request->input('title');
       $subtitle                        = $request->input('subtitle');
-      $imag_01                         = $request->file('image_01');
+      $image_01                         = $request->file('image_01');
       DB::table('banners')->insert(
           ['title' => $title, 'subtitle' => $subtitle, 'image_01' => $fileName_principal]
       );
@@ -76,7 +76,7 @@ class BannerController extends Controller
 
       $title                           = $request->input('title');
       $subtitle                        = $request->input('subtitle');
-      $imag_01                         = $request->file('image_01');
+      $image_01                         = $request->file('image_01');
       // Apagando arquivos existente
       $file_principal                     = DB::table('banners')->where('id',$id)->value('image_01');
       // Deletando arquivos existentes na pasta
